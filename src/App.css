@@ -1,0 +1,109 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+.nav-links {
+  display: flex;
+  gap: var(--spacing-md);
+}
+.nav-links a {
+  color: var(--color-text);
+  font-weight: 600;
+  padding: var(--spacing-xs) 0;
+}
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-lg) var(--spacing-sm);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-bg) 100%);
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--color-primary);
+  max-width: 800px;
+}
+.hero p {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin: var(--spacing-md) 0;
+}
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform var(--transition-speed), background-color var(--transition-speed);
+}
+.btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* Services */
+.services {
+  padding: var(--spacing-xl) 0;
+}
+.services-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+.service-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-secondary);
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+.footer p {
+  color: var(--color-text-muted);
+}
