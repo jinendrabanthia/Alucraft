@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@300;400;700&display=swap');
 
 :root {
-  --color-bg: #f9f9fc;
-  --color-text: #1a1a24;
-  --color-text-muted: #5a5a6b;
-  --color-primary: #154c79; /* Alucraft classic blue/navy */
-  --color-secondary: #e5edf5;
-  --color-accent: #ff6b35; /* Orange accent */
-  --color-border: #e0e0ea;
+  /* Monochrome premium light theme */
+  --color-bg: #ffffff;
+  --color-text: #0b0c0e;
+  --color-text-muted: #6b6f76;
+  --color-primary: #0b0c0e;
+  --color-secondary: #f6f6f7;
+  --color-accent: #000000;
+  --color-border: rgba(0,0,0,0.06);
   --color-card-bg: #ffffff;
   --font-sans: 'Inter', sans-serif;
-  --font-display: 'Outfit', sans-serif;
+  --font-display: 'Playfair Display', serif;
   
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -19,20 +20,9 @@
   --spacing-xl: 8rem;
 
   --border-radius: 12px;
-  --transition-speed: 0.3s;
+  --transition-speed: 0.5s;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0f1115;
-    --color-text: #e8e8ed;
-    --color-text-muted: #9ba0ab;
-    --color-primary: #3b82f6;
-    --color-secondary: #1a1d24;
-    --color-card-bg: #15181e;
-    --color-border: #2a2e38;
-  }
-}
 
 * {
   box-sizing: border-box;
@@ -78,7 +68,7 @@ a:hover {
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
+  animation: fadeIn 1.2s ease-out forwards;
 }
 
 /* Glassmorphism utility */
