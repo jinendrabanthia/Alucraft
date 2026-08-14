@@ -1,8 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { VscHome, VscArchive, VscFileMedia, VscMail } from 'react-icons/vsc';
+import Dock from './components/Dock';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Gallery from './pages/Gallery';
 import './index.css';
 import './App.css';
 
@@ -10,6 +13,14 @@ function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [compact, setCompact] = useState(false);
   const lastY = useRef(typeof window !== 'undefined' ? window.scrollY : 0);
+  const navigate = useNavigate();
+
+  const dockItems = [
+    { icon: <VscHome size={18} />, label: 'Home', onClick: () => navigate('/') },
+    { icon: <VscArchive size={18} />, label: 'Services', onClick: () => navigate('/services') },
+    { icon: <VscFileMedia size={18} />, label: 'Gallery', onClick: () => navigate('/gallery') },
+    { icon: <VscMail size={18} />, label: 'Contact', onClick: () => navigate('/contact') },
+  ];
 
   useEffect(() => {
     function onScroll() {
@@ -27,11 +38,12 @@ function Navbar() {
     <nav className={`navbar animate-fade-in ${hidden ? 'nav-hidden' : ''} ${compact ? 'nav-compact' : ''}`}>
       <Link to="/" className="nav-brand" style={{ textDecoration: 'none' }}>ALUCRAFT</Link>
       <div style={{ display: 'flex', alignItems: 'center' }}>
-        <div className="nav-links">
-          <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>Home</NavLink>
-          <NavLink to="/services" className={({ isActive }) => isActive ? "active-link" : ""}>Services</NavLink>
-          <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link" : ""}>Contact</NavLink>
-        </div>
+        <Dock 
+          items={dockItems}
+          panelHeight={68}
+          baseItemSize={50}
+          magnification={70}
+        />
         <div className="nav-cta">
           <Link to="/contact" className="btn" style={{ textDecoration: 'none' }}>Get a Quote</Link>
         </div>
@@ -49,6 +61,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
