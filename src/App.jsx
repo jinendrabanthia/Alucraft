@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link, useNavigate } from 'react-router-dom';
-import { VscHome, VscArchive, VscFileMedia, VscMail } from 'react-icons/vsc';
+import { VscHome, VscArchive, VscFileMedia, VscMail, VscStarFull } from 'react-icons/vsc';
 import Dock from './components/Dock';
 import Home from './pages/Home';
 import Services from './pages/Services';
+import Reviews from './pages/Reviews';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import './index.css';
@@ -18,6 +19,7 @@ function Navbar() {
   const dockItems = [
     { icon: <VscHome size={18} />, label: 'Home', onClick: () => navigate('/') },
     { icon: <VscArchive size={18} />, label: 'Services', onClick: () => navigate('/services') },
+    { icon: <VscStarFull size={18} />, label: 'Reviews', onClick: () => navigate('/reviews') },
     { icon: <VscFileMedia size={18} />, label: 'Gallery', onClick: () => navigate('/gallery') },
     { icon: <VscMail size={18} />, label: 'Contact', onClick: () => navigate('/contact') },
   ];
@@ -61,6 +63,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/reviews" element={<Reviews />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
