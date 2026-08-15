@@ -38,14 +38,18 @@ function Navbar() {
 
   return (
     <nav className={`navbar animate-fade-in ${hidden ? 'nav-hidden' : ''} ${compact ? 'nav-compact' : ''}`}>
-      <Link to="/" className="nav-brand" style={{ textDecoration: 'none' }}>ALUCRAFT</Link>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
+        <Link to="/" className="nav-brand" style={{ textDecoration: 'none' }}>ALUCRAFT</Link>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
         <Dock 
           items={dockItems}
           panelHeight={68}
           baseItemSize={50}
           magnification={70}
         />
+      </div>
+      <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
         <div className="nav-cta">
           <Link to="/contact" className="btn" style={{ textDecoration: 'none' }}>Get a Quote</Link>
         </div>
